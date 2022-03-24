@@ -9,3 +9,14 @@ Caso o valor de itemsValue for menor que 20,00, então devemos cobrar uma taxa d
 
 ### <b>driverTipValue:</b>
 Caso o método de entrega for do tipo retirada (TAKEAWAY) este valor será zerado (0,0), caso contrário, valor que será dado de gorjeta ao entregador, este valor somente será calculado em caso de pagamento online
+
+
+## Dicas
+
+ - Escreva primeiramente os testes
+ - Pense nas possíveis dependências externas
+ - Trate as dependencias como abstrações (interfaces)
+ - Siga o fluxo "Test -> Red -> Refactor -> Green"
+ - Explore os casos limites nos seus testes
+ - Um método não tem apenas um teste necessáriamente, um requisito tem um teste obrigatóriamente
+ - Rode os testes a todo o momento, a cada alteração que fizer
