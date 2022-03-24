@@ -2,7 +2,7 @@
 
 ## Deafio dia 2
 
-Calcular o valor da taxa de serviço (serviceFeeValue) e o valor da gorjeta do entregador (driverTipValue), Onde:
+Calcular o valor da taxa de serviço <b>(serviceFeeValue)</b>  e o valor da gorjeta do entregador <b>(driverTipValue)</b> , Onde:
 
 ### <b>serviceFeeValue:</b> 
 Caso o valor de itemsValue for menor que 20,00, então devemos cobrar uma taxa de serviço, o valor desta taxa de serviço será configurada em um serviço de configuração remota, caso o valor for maior que 20,00, a taxa de serviço será zerada (0,00)
