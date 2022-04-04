@@ -2,16 +2,16 @@ package br.com.ifood.tdd.workshop.domain.usecase
 
 import br.com.ifood.tdd.workshop.domain.model.CartFactory
 import br.com.ifood.tdd.workshop.domain.model.ItemFactory
-import br.com.ifood.tdd.workshop.domain.model.usecase.SummaryCalculator
+import br.com.ifood.tdd.workshop.domain.model.usecase.ItemsValueDefaultCalculator
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class CalculateSummaryTest {
+class ItemsValueDefaultCalculatorTest {
 
-    private val summaryCalculator: SummaryCalculator = SummaryCalculator()
+    private val itemsValueDefaultCalculator: ItemsValueDefaultCalculator = ItemsValueDefaultCalculator()
 
     @Test
-    fun calculateSummary_cartWithTwoItems_return_ten() {
+    fun calculate_cartWithTwoItems_return_ten() {
         val cart = CartFactory.make(
             items = ItemFactory.makeList(
                 count = 2,
@@ -20,28 +20,28 @@ class CalculateSummaryTest {
             )
         )
 
-        val actual: Double = summaryCalculator.calculateItemsValue(cart)
+        val actual: Double = itemsValueDefaultCalculator.calculate(cart)
 
         assertEquals(10.0, actual)
     }
 
     @Test
-    fun calculateSummary_cartWithoutItems_return_zero() {
+    fun calculate_cartWithoutItems_return_zero() {
         val cart = CartFactory.make(
             items = emptyList()
         )
 
-        val actual: Double = summaryCalculator.calculateItemsValue(cart)
+        val actual: Double = itemsValueDefaultCalculator.calculate(cart)
 
         assertEquals(0.0, actual)
     }
 
 
     @Test
-    fun calculateSummary_cart_returnExpectedValues() {
+    fun calculate_cart_returnExpectedValues() {
         val cart = CartFactory.make()
 
-        val actual: Double = summaryCalculator.calculateItemsValue(cart)
+        val actual: Double = itemsValueDefaultCalculator.calculate(cart)
         val expected = cart.items.sumOf { it.quantity * it.unitValue }
 
         assertEquals(expected, actual)
